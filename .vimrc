@@ -5,7 +5,10 @@ set background=dark
 "General	
 filetype plugin indent on	" automatically detect filetypes
 syntax enable               " syntax highlighting
-set mouse=a	                " enable mouse automatically
+
+if has("mouse")
+    set mouse=a	            " enable mouse automatically
+endif
 
 " Vim UI
 set showmode	            " display current mode
@@ -46,7 +49,7 @@ if has("cmdline_info")
     set ruler
 endif
 
-if has("syntax")
+if has("syntax") && has("colorcolumn")
     set colorcolumn=80
 endif
 
