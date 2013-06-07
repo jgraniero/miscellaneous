@@ -31,6 +31,7 @@ endif
 
 " Formatting
 set autoindent      " indent at the same level of the previous line
+set smartindent
 set smarttab        " <Tab> inserts [shiftwidth] spaces
 set shiftwidth=4	" indent 4 spaces when using autoindent
 set softtabstop=4   " backspace deletes tabs
