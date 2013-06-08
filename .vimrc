@@ -49,8 +49,15 @@ if has("cmdline_info")
     set ruler
 endif
 
-if has("syntax") && has("colorcolumn")
-    set colorcolumn=80
+" highlight column 80
+if version >= 730 && has('syntax') && has('colorcolumn')
+	set colorcolumn=80
+elseif version >= 714
+	au BufWinEnter * let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)
+	au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)	
+else
+	au BufRead,BufNewFile * syntax match Search /\%<81v.\%>77v/
+	au BufRead,BufNewFile * syntax match ErrorMsg /\%>80v.\+/	
 endif
 
 " Vim Notes
