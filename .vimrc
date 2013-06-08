@@ -1,8 +1,11 @@
-"Basics
+" Pathogen
+execute pathogen#infect()
+
+" Basics
 set nocompatible
 set background=dark
 
-"General	
+" General	
 filetype plugin indent on	" automatically detect filetypes
 syntax enable               " syntax highlighting
 
