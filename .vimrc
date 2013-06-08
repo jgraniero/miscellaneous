@@ -50,9 +50,9 @@ if has("cmdline_info")
 endif
 
 " highlight column 80
-if version >= 730 && has('syntax') && has('colorcolumn')
+if version >= 703 && has("syntax")
 	set colorcolumn=80
-elseif version >= 714
+elseif version >= 701
 	au BufWinEnter * let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)
 	au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)	
 else
@@ -64,3 +64,6 @@ endif
 if isdirectory("~/Documents/notes")
     let g:notes_directories=['~/Documents/notes']
 endif
+
+" Maps
+nmap <F8> :TagbarToggle<CR>
