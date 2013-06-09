@@ -70,5 +70,5 @@ let g:notes_directories=['~/Documents/notes']
 au BufWinEnter * :NERDTree
 
 " Maps
-nmap <F8> :TagbarToggle<CR>
-nmap <F9> :NERDTreeToggle<CR>
+nmap <F8> :NERDTreeToggle<CR>
+nmap <F9> :TagbarToggle<CR>
