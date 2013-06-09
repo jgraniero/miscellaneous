@@ -64,9 +64,7 @@ else
 endif
 
 " Vim Notes
-if isdirectory("~/Documents/notes")
-    let g:notes_directories=['~/Documents/notes']
-endif
+let g:notes_directories=['~/Documents/notes']
 
 " NerdTree
 au BufWinEnter * :NERDTree
