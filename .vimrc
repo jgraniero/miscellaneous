@@ -69,6 +69,9 @@ let g:notes_directories=['~/Documents/notes']
 " NerdTree
 au BufWinEnter * :NERDTree
 
+" Tagbar
+au BufWinEnter *.java,*.php,*.py :TagbarToggle
+
 " Maps
 nmap <F8> :NERDTreeToggle<CR>
 nmap <F9> :TagbarToggle<CR>
