@@ -43,8 +43,15 @@ echo -e "copying vim files to " ~
 cp ".vimrc" "$vimrc"
 cp -r ".vim" "$vimdir"
 
+# create the bundle directory if it doesn't exist
+if [ ! -d "${vimdir}/bundle" ];
+then
+    mkdir "${vimdir}/bundle"
+fi
+
+
 # copy all plugins to .vim/bundle so that they can be picked up by pathogen
-plugins=$(find "$plugindir" -d -maxdepth 1 -not -name "$plugindir")
+plugins=$(find "$plugindir" -maxdepth 1 -type d -not -name "$plugindir")
 
 for plugin in $plugins
 do
