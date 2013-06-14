@@ -1,22 +1,22 @@
-" Pathogen {
+" Pathogen {{{
     execute pathogen#infect()
-" }
+" }}}
 
-" Basics {
+" Basics {{{
     set nocompatible
     set background=dark
-" }
+" }}}
 
-" General {
+" General {{{
     filetype plugin indent on	" automatically detect filetypes
     syntax enable               " syntax highlighting
 
     if has("mouse")
         set mouse=a	            " enable mouse automatically
     endif
-" }
+" }}}
 
-" Vim UI {
+" Vim UI {{{
     set showmode	            " display current mode
     set cursorline              " underline the line that the cursor is on
     set nu	                    " line numbers on
@@ -39,9 +39,9 @@
         set wildmenu	        " show list instead of just completing
         set wildmode=list:longest,full	" command <Tab> completion
     endif
-" }
+" }}}
 
-" Formatting {
+" Formatting {{{
     set smartindent
     set autoindent
     set smarttab        " <Tab> inserts [shiftwidth] spaces
@@ -70,31 +70,31 @@
         au BufRead,BufNewFile * syntax match Search /\%<81v.\%>77v/
         au BufRead,BufNewFile * syntax match ErrorMsg /\%>80v.\+/	
     endif
-" }
+" }}}
 
-" Plugins {
-    " Vim Notes {
+" Plugins {{{
+    " Vim Notes {{{
         let g:notes_directories=['~/Documents/notes']
-    " }
+    " }}}
 
-    " NerdTree {
+    " NerdTree {{{
         au VimEnter * NERDTree  " open NERDTree
         au VimEnter * wincmd p
-    " }
+    " }}}
 
-    " Tagbar {
-        au BufWinEnter *.java,*.php,*.py :TagbarOpen
-    " }
-" }
+    " Tagbar {{{
+        au VimEnter *.java,*.php,*.py :TagbarOpen
+    " }}}
+" }}}
 
-" Maps {
+" Maps {{{
     nmap <F8> :NERDTreeToggle<CR>
     nmap <F9> :TagbarToggle<CR>
     
-    " Windows {
+    " Windows {{{
         nmap <C-J> <C-W>j<C-W>_
         nmap <C-K> <C-W>k<C-W>_
         nmap <C-H> <C-W>h<C-W>
         nmap <C-L> <C-W>l<C-W>
-    " }
-" }
+    " }}}
+" }}}
