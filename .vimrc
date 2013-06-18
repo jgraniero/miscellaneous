@@ -86,8 +86,9 @@
         au VimEnter *.java,*.php,*.py :TagbarOpen
     " }}}
 
-    " Tagbar phpctags
+    " Tagbar phpctags {{{
         let g:tagbar_phpctags_bin='~/vim-helpers/vim-plugin-tagbar-phpctags/bin/phpctags'
+    " }}}
 " }}}
 
 " Maps {{{
