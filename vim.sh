@@ -106,20 +106,17 @@ do
 done
 
 # install ctags
-if [ $ctagsinstalled -ne 1 ];
-then
-    echo -e "installing exuberant ctags to ${home}"
-    set -x
-    cd "$localHelperdir"
-    tar -xzvf ctags* >> "${logdir}/ctags.log" 2>&1
-    cd ctags*
-    ./configure "--prefix=${home}/${repoHelperdir}/usr/local" >> "${logdir}/ctags.log" 2>&1
-    make -s >> "${logdir}/ctags.log" 2>&1
-    make -s install >> "${logdir}/ctags.log" 2>&1
-    cd ..
-    rm -rf ctags*
-    set +x
-fi
+echo -e "installing exuberant ctags to ${home}"
+set -x
+cd "$localHelperdir"
+tar -xzvf ctags* >> "${logdir}/ctags.log" 2>&1
+cd ctags*
+./configure "--prefix=${home}/${repoHelperdir}/usr/local" >> "${logdir}/ctags.log" 2>&1
+make -s >> "${logdir}/ctags.log" 2>&1
+make -s install >> "${logdir}/ctags.log" 2>&1
+cd ..
+rm -rf ctags*
+set +x
 echo -e "\n"
 
 # install php
@@ -144,11 +141,12 @@ make -s install-cli >> "${logdir}/php.log" 2>&1
 cd ..
 rm -rf php*
 set +x
+echo -e "\n"
+
 if [[ ! $PATH =~ "${localBin}" ]];
 then
     export PATH="${home}/${repoHelperdir}/usr/local/bin:${PATH}"
 fi
-echo -e "\n"
 
 # install phpctags
 echo -e "installing phpctags"
