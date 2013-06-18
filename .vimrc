@@ -90,6 +90,7 @@
 " Maps {{{
     nmap <F8> :NERDTreeToggle<CR>
     nmap <F9> :TagbarToggle<CR>
+    inoremap ;; <ESC>
     
     " Windows {{{
         nmap <C-J> <C-W>j<C-W>_
